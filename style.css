@@ -1,0 +1,112 @@
+
+ .logo {
+    display: block;
+    max-width: 150px;
+}
+:root{
+    background-color: #f9f7fe;
+}
+
+.Weather{
+    display: block;
+    margin: 0 auto;
+    border: solid, 70px;
+    border-radius: 10px;
+    align-items: center;
+    max-width: 700px;
+    background-color: #ffff;
+    padding: 2.7rem 2.500rem;
+    box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+    color: navy;
+    font-family: Cerebri-Sans,Helvetica,Arial,sans-serif;
+}
+input[type=search] { 	
+    appearance: none;
+    background-clip: padding-box;
+    background-color: #f9f7fe;
+    border: 1px solid #f9f7fe;
+    border-radius: .375rem;
+    color: #212529;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: .750rem .75rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: 70%;
+    float:left
+}
+
+
+.btn{
+    flex: 0 0 auto;
+    width: 45%;
+    color: white;
+    background-color: rgb(172, 35, 172);
+    font-style: normal, bold;
+    font-weight: 400;
+    font-size: 1rem;
+    border: 1px solid rgb(172, 35, 172);
+    max-width: 175px;
+   display: inline-block;
+   padding: .750rem .75rem;
+   border-radius: 5px;
+   text-align: center;
+   float: right;
+
+   
+}
+.Weather{
+    box-sizing: border-box;
+    padding: 40px, 40px;
+}
+.row{
+    display: inline;
+    
+}
+.col-6{
+    flex:0 0 auto;
+    width:50%;
+}
+.h1{
+    color: #272142;
+    font-size: 38px;
+    font-weight: 700;
+    line-height:29px;
+    line-height:48px;
+    margin:20px 0 10px;
+    display: block;
+    font-family: bold;
+    font-style: normal;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+   color: rgba(39,33,66,.4);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin-bottom: 5px;
+}
+col-6{
+flex: 0 0 auto;
+width: 50%;
+}
+.justify-content-end{
+    justify-content: flex-end !important;
+}
+.forecast-time {
+    color: rgba(39,33,66,.4);
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+.col{
+    display: inline-block;
+   padding: .750rem .175rem;
+   margin: 0;
+   float: center;
+   padding: 40px;
+}
