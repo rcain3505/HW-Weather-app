@@ -11,6 +11,9 @@ body {
   border-radius: 6px;
   box-shadow: 0 30px 50px hsla(263, 14%, 11%, 0.671);
 }
+a{
+  text-align: center;
+}
 h1 {
   color: grey;
 }
