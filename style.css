@@ -12,7 +12,9 @@ body {
   box-shadow: 0 30px 50px hsla(263, 14%, 11%, 0.671);
 }
 a{
-  text-align: center;
+  text-align: right;
+    margin: 0 auto;
+  padding: 2.7rem 2.500rem;
 }
 h1 {
   color: grey;
