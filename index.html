@@ -1,137 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel=stylesheet href="style.css">
-<link href="https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}
-key: 1804ad44e9c16ffa43c0a000ff604023
-">
-</head>
-<body>
-    <div id="root">
-    <div class="App">
-    <div class="container">
-    <div class="Weather">
-    <a href="https://www.shecodes.io/" target="_blank" rel="noopener noreferrer">
-        <img src="img/logo-shecodes-f9fa0540d113c086f61eb6e89466c0cbd24a42163b6a96d4b01da078803f53ee.png" class=" logo" alt="SheCodes Logo" width="200px">
-    </a>
-    <form>
-    <div class="row">
-     <div class="col-9">
-     <input type="search" placeholder="Enter a city.." >
-    </div>
-    <div class="p-0">
-     <input type="submit" class="btn" value="Search">   
-    </div>    
-    </div>
-    </form>
-    <br>
-    <br>
-    <br>
-    <hr>
-    <div class="WeatherInfo">
-    <div class="row">
-    <div class="col-6">
-        <h1>New York</h1>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+      <div class="container">
+        <div class="Shecodes">
+            <a href="https://www.shecodes.io" target="_blank" rel="noopener noreferrer">
+                <img  src="img/logo-shecodes-f9fa0540d113c086f61eb6e89466c0cbd24a42163b6a96d4b01da078803f53ee.png" class="logo" alt="shecodes logo" width="200"/>
+            </a>
+            </div>
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Type a City.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-conrtol shadow-sm"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn"
+              />
+            </div>
+          </div>
+        </form>
+        <h1 id="#city"></h1>
         <ul>
-            <li>
-              <span>
-                Sunday
-                01:24
-              </span>  
-              ,
-              Clear Sky
-            </li>
-            <li>
-            Humidity:
-            <strong>
-            65%
-            </strong>
-            , Wind:
-            <strong>
-            3.09
-            km/h 
-            </strong>
-            </li>
+          <li id="date"></li>
+          <li>Partly Cloudy</li>
         </ul>
-    </div>    
-        <div class="col-6">
-         <div class="temperature-container d-flex justify-content-end">
-          <canvas width="52" height="52">
-        <div>
-            <span class="temperature">9</span>
-            <span class="unit">°C</span>
-        </div>  
-        </div>   
+        <div class="row">
+          <div class="col-6">
+            <div class="clear fix">
+              <img
+                src="https://i1.wp.com/www.differencebetween.com/wp-content/uploads/2014/12/Partly-Cloudy_Difference-Between-Partly-Cloudy-and-Mostly-Sunny.png?resize=300%2C277&ssl=1"
+                alt=" Partly Cloudy icon"
+                width="50px"
+                class="weather-icon float-left"
+              />
+              <div class="float-left">
+                <span class="temperature" id="temperature"> 19 </span>
+                <span class="units">
+                  <a herf="#" id="celsius-link"> C°</a>
+                  "|"
+                  <a herf="#" id="fahrenheit-link"> F°</a>
+                </span>
+              </div>
+              <br />
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Percipitation: 0%</li>
+              <li>Humidity: 77%</li>
+              <li>Wind: 8% km/h</li>
+            </ul>
+            </div>
+
+          </div>
         </div>
-    </div>    
+      </div>
     </div>
-    <div class="WeatherForecast row">
-      <div class="col">
-        <div class="WeatherForcastPreview">
-        <div class="forecast-time">Sun</div>
-        <canvas width="38" height="38">
-        <div class="forecast-temperature">
-            <span class="forecast-temperature-max">17°</span>
-            <span class="forecast-temperature-min">9°</span>
-        </div>
-        </div>
-      </div> 
-      <div class="col">
-      <div class="WeatherForecastPreview">
-      <Div class="forecast-time">Mon</Div>
-      <canvas width="38" height="38">
-       <div class="forecast-temperature"> 
-      <span class="forecast-temperature-max">19°</span>
-      <span class="forecast-temperature-min">11°</span>    
-      </div> 
-      </div> 
-    </div>
-    <div class="col">
-    <div class="WeatherForcastPreview">
-    <div class="forecast-time">Tue</div>
-    <canvas  width="38" height="38">
-    <div class="forecast-temperature">
-       <span class="forecast-temperature-max">21°</span>
-       <span class="forecast-temperature-min">13°</span>
-    </div>    
-    </div>
-    </div>
-    <div class="col">
-    <div class="WeatherForecastPreview">
-    <div class="forecast-time">Wed</div>
-    <canvas width="38" height="38">  
-    <div class="forecast-temperature">
-        <span class="forecast-temperature-max">21°</span>
-        <span class="forecast-temperature-min">14°</span>
-    </div> 
-    </div> 
-    </div>
-    <div class="col">
-        <div class="WeatherForecastPreview">
-         <div class="forecast-time">Thu</div>
-         <canvas width="38" height="38">
-        <div class="forecast-temperature">
-         <span class="forecast-temperature-max">20°</span>
-         <span class="forecast-temperature-min">16°</span>   
-        </div>   
-        </div>
-    </div>
-    </div>
-    <footer>
-        "This Project was created by Isamar"
-        <a href="https://www.shecodes.io/" target="_blank" rel="noopener noreferrer"> SheCodes</a>
-        "reference site on" <a href="" target="_blank" rel="noopener noreferrer">Github</a>
-        "and made on " <a href="" target="_blank" rel="noopener noreferrer"> Netlify</a> 
-    </footer>
-    <script src="script.js"></script>
-    </div>    
-    </div>
-    </div>
-    </div>
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>
