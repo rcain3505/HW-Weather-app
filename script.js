@@ -69,11 +69,17 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = 66;
 }
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = 19;
 }
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -84,4 +90,3 @@ searchForm.addEventListener("submit", handleSubmit);
 
 
 searchCity("New York");
-
