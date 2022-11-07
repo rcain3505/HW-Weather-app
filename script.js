@@ -19,9 +19,33 @@ function formatDate(date) {
     "Saturday"
   ];
   let day = days[dayIndex];
-
   return `${day} ${hours}:${minutes}`;
 }
+ 
+function displayForecast() {
+    let forecastElement= document.querySelector("#forecast");
+
+    let forecastHTML = "";
+    forecastHTML= forecastHTML +
+    '
+    <div  class="row">
+        <div class="col-2">
+          <div class="weather-forecast-date"> Monday </div>
+            <img 
+            src="https://openweathermap.org/img/wn/01d@2x.png" 
+            alt="" 
+            width="36"
+            />
+            <div class="weather-forecast-temperatures">
+                    <span class="weather-forecast-temperature-max">18°</span>
+                    <span class="weather-forecast-temperature-min">12°</span>
+                  </div>
+                </div>
+            </div>
+            '
+            forecastElement.innerHTML = forecastHTML;
+}
+
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -86,3 +110,4 @@ searchForm.addEventListener("submit", handleSubmit);
 
 
 searchCity("New York");
+displayForecast();
