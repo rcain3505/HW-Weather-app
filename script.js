@@ -69,8 +69,6 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = 66;
 }
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
 
 function convertToCelsius(event) {
   event.preventDefault();
