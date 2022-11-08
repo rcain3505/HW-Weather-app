@@ -28,11 +28,9 @@ function displayForecast() {
     let forecastHTML = '<div  class="row">';
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
     days.forEach(function(day){
-   
-    forecastHTML= 
+   forecastHTML= 
     forecastHTML +
-    '
-    <div class="col-2">
+    '<div class="col-2">
       <div class="weather-forecast-date">${day} </div>
             <img 
             src="https://openweathermap.org/img/wn/01d@2x.png" 
@@ -46,7 +44,7 @@ function displayForecast() {
                 </div>
             ';
  });
-            forecastHTML = forecastHTML + '</div>';
+            forecastHTML = forecastHTML + "</div>";
             forecastElement.innerHTML = forecastHTML;
 }
 
