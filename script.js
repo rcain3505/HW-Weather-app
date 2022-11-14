@@ -22,6 +22,8 @@ function formatDate(timestamp) {
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
 }
+
+
  
 function displayForecast(response) {
     let forecast = response.data.daily;
