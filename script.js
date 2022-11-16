@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-  let date = new Date(timestamp);
+  let date = new Date(timestamp * 1000);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -32,22 +32,25 @@ function displayForecast(response) {
 
     let forecastHTML = `<div  class="row">`;
    
-    forecast.forEach(function(forecastDay){
+    forecast.forEach(function(forecastDay, index){
+    if(index < 6){
    forecastHTML= 
     forecastHTML +
             `<div class="col-2">
       <div class="weather-forecast-
-      date">${forecastDay.dt} </div>
+      date">${formatDay(forecastDay.dt)} </div>
+      ${index}
             <img 
             src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
             alt="" 
             width="36"
             />
             <div class="weather-forecast-temperatures">
-                    <span class="weather-forecast-temperature-max">${forecastDay.temp.max}°</span>
-                    <span class="weather-forecast-temperature-min">${forecastDay.temp.min}°</span>
+                    <span class="weather-forecast-temperature-max">${(forecastDay.temp.max)}°</span>
+                    <span class="weather-forecast-temperature-min">${(forecastDay.temp.min)}°</span>
                   </div>
                 </div>`;
+    }
  });
             forecastHTML = forecastHTML + `</div>`;
             forecastElement.innerHTML = forecastHTML;
@@ -77,7 +80,7 @@ function displayTemperature(response){
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatData(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.dt);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
