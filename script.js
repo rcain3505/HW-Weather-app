@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-  let date = new Date(timestamp * 1000);
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -9,7 +9,7 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  let dayIndex = date.getDay();
+  
   let days = [
     "Sunday",
     "Monday",
@@ -19,7 +19,7 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday"
   ];
-  let day = days[dayIndex];
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -77,7 +77,7 @@ function displayTemperature(response){
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
-  let iconElement = document.querySelector(".weather-icon");
+  let iconElement = document.querySelector("#weather-icon");
 
   celsiusTemperature = response.data.main.temp;
 
